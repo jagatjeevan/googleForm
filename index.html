@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test form</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+	<br />
+
+	<div class="container">
+		<div class="row">
+			<div class="col">
+				<form>
+					<div class="form-group">
+						<label for="exampleInputEmail1">Email address</label>
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+						<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+					</div>
+					<div class="form-group">
+						<label for="address">Search address</label>
+						<input type="text" class="form-control" id="autocomplete" placeholder="Search Address" />
+					</div>
+
+					<div>
+						<input type="text" id="street_number" placeholder="street_number" />
+						<input type="text" id="route" placeholder="route" />
+						<input type="text" id="locality" placeholder="locality" />
+						<input type="text" id="administrative_area_level_1" placeholder="administrative_area_level_1" />
+						<input type="text" id="country" placeholder="country" />
+						<input type="text" id="postal_code" placeholder="postal_code" />
+					</div>
+					<button type="submit" class="btn btn-primary" id="form-submit">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<script>
+		var submitButton = document.querySelector('#form-submit');
+		submitButton.addEventListener('click', function() {
+			var postObject = {
+				emailAddress: document.querySelector('#exampleInputEmail1').value,
+				address: componentForm
+			}
+		});
+	</script>
+
+	<script>
+		var placeSearch, autocomplete;
+		var componentForm = {
+			street_number: 'long_name',
+			route: 'long_name',
+			locality: 'long_name',
+			administrative_area_level_1: 'long_name',
+			country: 'long_name',
+			postal_code: 'long_name'
+		};
+
+		function myMap() {
+			autocomplete = new google.maps.places.Autocomplete((document.getElementById('autocomplete')),{types: ['geocode']});
+			autocomplete.addListener('place_changed', fillInAddress);
+		}
+
+		function fillInAddress() {
+			var place = autocomplete.getPlace();
+			console.log(place);
+			for (var component in componentForm) {
+				document.getElementById(component).value = '';
+				document.getElementById(component).disabled = false;
+			}
+
+			for (var i = 0; i < place.address_components.length; i++) {
+				var addressType = place.address_components[i].types[0];
+				if (componentForm[addressType]) {
+					var val = place.address_components[i][componentForm[addressType]];
+					document.getElementById(addressType).value = val;
+				}
+			}
+		}
+	</script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi-mKONX-DVRyQKGxcPMyRkZJzrYBXM_o&libraries=places&callback=myMap"></script>
+</body>
+</html>

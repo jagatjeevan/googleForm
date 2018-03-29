@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Material Design for a form</title>
+  <!-- MDL -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <style>
+    .mdl-textfield__label:after {
+      bottom: 12px;
+    }
+    .mdl-textfield {
+      width: 100%;
+    }
+    .header {
+      background: #6610f2;
+      min-height: 184px;
+    }
+    .title {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+      padding: 30px 0 17px;
+    }
+    .form {
+      background: #fff;
+      box-shadow: 0px 1px 3px 0px rgba(173, 173, 173, 0.75);
+      margin: auto;
+      padding-bottom: 30px;
+      max-width: 80%;
+      position: relative;
+      top: -80px;
+    }
+  </style>
+
+</head>
+<body>
+  <header class="header"></header>
+  <form action="#" class="form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h2 class="title">Feedback Form</h2>
+      </div>
+      <div class="col-md-6">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="name">
+          <label class="mdl-textfield__label" for="name">Enter your name</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="email" id="email">
+          <label class="mdl-textfield__label" for="email">Enter your email address</label>
+        </div>
+      </div>
+      <div class="col-md-12">
+        <div class="mdl-textfield mdl-js-textfield">
+          <input class="mdl-textfield__input" type="text" id="address">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="street_number">
+          <label class="mdl-textfield__label" for="street_number">Street Number</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="route">
+          <label class="mdl-textfield__label" for="Route">Route</label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="locality">
+          <label class="mdl-textfield__label" for="locality">Locality</label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="administrative_area_level_1">
+          <label class="mdl-textfield__label" for="administrative_area_level_1">Administrative Area Level 1</label>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="administrative_area_level_2">
+          <label class="mdl-textfield__label" for="administrative_area_level_2">Administrative Area Level 2</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="country">
+          <label class="mdl-textfield__label" for="country">Country</label>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input class="mdl-textfield__input" type="text" id="postal_code">
+          <label class="mdl-textfield__label" for="postal_code">Postal Code</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 text-right">
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="submit">Submit</button>
+      </div>
+    </div>
+  </div>
+  </form>
+
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <!-- Bootstrap -->
+<!--   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ -->
+  <!-- Google map scripts -->
+  <script>
+    var placeSearch, autocomplete;
+    var componentForm = {
+      street_number: 'long_name',
+      route: 'long_name',
+      locality: 'long_name',
+      administrative_area_level_1: 'long_name',
+      country: 'long_name',
+      postal_code: 'long_name'
+    };
+
+    function fillInAddress() {
+      var place = autocomplete.getPlace();
+      console.log(place);
+      for (var component in componentForm) {
+        document.getElementById(component).value = '';
+        document.getElementById(component).disabled = false;
+      }
+
+      for (var i = 0; i < place.address_components.length; i++) {
+        var addressType = place.address_components[i].types[0];
+        if (componentForm[addressType]) {
+          var val = place.address_components[i][componentForm[addressType]];
+          document.getElementById(addressType).value = val;
+        }
+      }
+      for(var i =0; i < document.querySelectorAll('.mdl-textfield').length; i++) {
+        document.querySelectorAll('.mdl-textfield')[i].MaterialTextfield.checkDirty();
+      }
+    }
+
+    function myMap() {
+      autocomplete = new google.maps.places.Autocomplete((document.getElementById('address')),{types: ['geocode']});
+      autocomplete.addListener('place_changed', fillInAddress);
+    }
+  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAi-mKONX-DVRyQKGxcPMyRkZJzrYBXM_o&libraries=places&callback=myMap"></script>
+
+  <!-- DOM manipulation -->
+  <script>
+    function checkValidityForNull(id) {
+      if($('#'+id).val() === '') {
+        $("#"+id).parent('.mdl-textfield').addClass('is-invalid');
+        return false;
+      }
+      return true;
+    }
+
+    function checkValidityForEmail(id) {
+      var testRegex = $('#'+id).val();
+      return testRegex.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)
+    }
+
+    $("#submit").on('click', function() {
+      var isNameFieldValid = checkValidityForNull('name');
+      var isEmailFieldValid = checkValidityForEmail('email');
+      if(isNameFieldValid && isEmailFieldValid) {
+        console.log("Submitting the form");
+      } else {
+        console.log("Fill the form to submit");
+      }
+    });
+  </script>
+</body>
+</html>
