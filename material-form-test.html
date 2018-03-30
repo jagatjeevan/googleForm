@@ -5,8 +5,7 @@
   <title>Material Design for a form</title>
   <!-- MDL -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"> -->
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-blue.min.css">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -42,7 +41,7 @@
 </head>
 <body>
   <header class="header"></header>
-  <div class="form">
+  <form class="form" onSubmit="submitForm(event);">
     <div class="container">
       <div class="row">
         <div class="col-md-12">
@@ -104,11 +103,11 @@
       </div>
       <div class="row">
         <div class="col-md-12 text-right">
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="submit">Submit</button>
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="submit" type="submit">Submit</button>
         </div>
       </div>
     </div>
-  </div>
+  </form>
 
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -172,16 +171,24 @@
       }
       return testRegex.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/) === null ? false : true;
     }
-
-    $("#submit").on('click', function() {
+    
+    function submitForm (e) {
+      e.stopPropagation();
       var isNameFieldValid = checkValidityForNull('name');
       var isEmailFieldValid = checkValidityForEmail('email');
+      console.log(typeof isNameFieldValid);
+      console.log(typeof isEmailFieldValid);
       if(isNameFieldValid && isEmailFieldValid) {
-        alert("Thank you for the response. Your sample would be sent your address");
+        console.log(componentForm);
+        google.script.run
+          .onSuccessHandler(function(response) { console.log(response); })
+          .onFailureHandler(function(response) { console.log(response); })
+          .submitForm(componentForm);
       } else {
-        console.log("Fill the form to submit");
+        console.log("Could not submit the form");
       }
-    });
+    }
+    
   </script>
 </body>
 </html>
