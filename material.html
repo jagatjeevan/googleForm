@@ -10,7 +10,7 @@
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
   <style>
     label {
@@ -69,79 +69,113 @@
       <img src="bj.png" alt="">
     </div>
   </header>
-  <form accept-charset="UTF-8" action="https://formkeep.com/f/1a3070c95c51" method="POST">
-    <div class="form">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="title">Take a free sample</h2>
-            <div class="text-muted">We have launched a new product. If you want to try our free samples for the product XXX, please fill up the form and we would ship the sample to your address.</div>
+  <div class="form">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="title">Take a free sample</h2>
+          <div class="text-muted">We have launched a new product. If you want to try our free samples for the product XXX, please fill up the form and we would ship the sample to your address.</div>
+        </div>
+
+        <div class="col-md-12 section-title">
+          <h4>Personal Details</h4>
+        </div>
+
+        <div class="col-md-6">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="name">
+            <label class="mdl-textfield__label" for="name">Enter your first name <span>*</span></label>
           </div>
+        </div>
 
-          <div class="col-md-12 section-title">
-            <h4>Personal Details</h4>
+        <div class="col-md-6">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="lname">
+            <label class="mdl-textfield__label" for="lname">Enter your last name</label>
           </div>
+        </div>
 
-          <div class="col-md-6">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input class="mdl-textfield__input" type="text" id="name">
-              <label class="mdl-textfield__label" for="name">Enter your first name <span>*</span></label>
-            </div>
-          </div>
-
-          <div class="col-md-6">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input class="mdl-textfield__input" type="text" id="lname">
-              <label class="mdl-textfield__label" for="lname">Enter your last name</label>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
-              <label class="mdl-button mdl-js-button mdl-button--icon" for="dob">
-                <i class="material-icons">date_range</i>
-              </label>
-              <div class="mdl-textfield__expandable-holder">
-                <input class="mdl-textfield__input" type="text" id="dob" readonly="readonly" placeholder="Date of birth (dd/mm/yyyy)">
-                <label class="mdl-textfield__label" for="dob">Expandable Input</label>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input class="mdl-textfield__input" type="text" id="bj_membership_number" />
-              <label class="mdl-textfield__label" for="bj_membership_number">Enter BJ's Membership Number <span>*</span></label>
-              <span class="mdl-textfield__error">11 digits e.g. 123XXXXXXX, 444XXXXXXX, 555XXXXXXX</span>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-              <input class="mdl-textfield__input" type="email" id="email">
-              <label class="mdl-textfield__label" for="email">Enter your email address <span>*</span></label>
-            </div>
-          </div>
-
-          <div class="col-md-12 section-title">
-            <h4>Contact Details</h4>
-          </div>
-
-
-          <div class="col-md-12">
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="address" placeholder="Search your mailing address here...">
+        <div class="col-md-12">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="dob">
+              <i class="material-icons">date_range</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="dob" readonly="readonly" placeholder="Date of birth (dd/mm/yyyy)">
+              <label class="mdl-textfield__label" for="dob">Expandable Input</label>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-md-12 text-right">
-            <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="submit">Submit</button>
+
+        <div class="col-md-12">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="bj_membership_number" />
+            <label class="mdl-textfield__label" for="bj_membership_number">Enter BJ's Membership Number <span>*</span></label>
+            <span class="mdl-textfield__error">11 digits e.g. 123XXXXXXX, 444XXXXXXX, 555XXXXXXX</span>
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="email" id="email">
+            <label class="mdl-textfield__label" for="email">Enter your email address <span>*</span></label>
+          </div>
+        </div>
+
+        <div class="col-md-12 section-title">
+          <h4>Contact Details</h4>
+        </div>
+
+
+        <div class="col-md-12">
+          <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" type="text" id="address" placeholder="Search your mailing address here...">
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="street_number">
+            <label class="mdl-textfield__label" for="street_number">Street Number</label>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="route">
+            <label class="mdl-textfield__label" for="Route">Route</label>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="locality">
+            <label class="mdl-textfield__label" for="locality">Locality</label>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="administrative_area_level_1">
+            <label class="mdl-textfield__label" for="administrative_area_level_1">Administrative Area Level 1</label>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="country">
+            <label class="mdl-textfield__label" for="country">Country</label>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="postal_code">
+            <label class="mdl-textfield__label" for="postal_code">Postal Code</label>
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-md-12 text-right">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="submit">Submit</button>
+        </div>
+      </div>
     </div>
-  </form>
+  </div>
 
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
