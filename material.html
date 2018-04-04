@@ -73,8 +73,8 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <h2 class="title">Take a free sample</h2>
-          <div class="text-muted">We have launched a new product. If you want to try our free samples for the product XXX, please fill up the form and we would ship the sample to your address.</div>
+          <h2 class="title">Request a sample here</h2>
+          <div class="text-muted">We have one goal - To make you more beautiful and give a little love to our planet. We want to help make a little difference with every shower towards a happier, less wasteful planet. Our approach is a holistic one, encompassing the entire product life cycle and beyond: we’ve given careful thought to our ingredients, product packaging, and social partnerships. We call it our passionate journey of #smallactsoflove, and we’re just getting started.</div>
         </div>
 
         <div class="col-md-12 section-title">
@@ -101,7 +101,7 @@
               <i class="material-icons">date_range</i>
             </label>
             <div class="mdl-textfield__expandable-holder">
-              <input class="mdl-textfield__input" type="text" id="dob" readonly="readonly" placeholder="Date of birth (dd/mm/yyyy)">
+              <input class="mdl-textfield__input" type="text" id="dob" readonly="readonly" placeholder="Date of birth (mm/dd/yyyy)">
               <label class="mdl-textfield__label" for="dob">Expandable Input</label>
             </div>
           </div>
@@ -135,37 +135,37 @@
         <div class="col-md-12">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="street_number">
-            <label class="mdl-textfield__label" for="street_number">Street Number</label>
+            <label class="mdl-textfield__label" for="street_number">Street Address 1</label>
           </div>
         </div>
         <div class="col-md-12">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="route">
-            <label class="mdl-textfield__label" for="Route">Route</label>
+            <label class="mdl-textfield__label" for="Route">Street Address 2</label>
           </div>
         </div>
         <div class="col-md-12">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="locality">
-            <label class="mdl-textfield__label" for="locality">Locality</label>
+            <label class="mdl-textfield__label" for="locality">City</label>
           </div>
         </div>
         <div class="col-md-12">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="administrative_area_level_1">
-            <label class="mdl-textfield__label" for="administrative_area_level_1">Administrative Area Level 1</label>
-          </div>
-        </div>
-        <div class="col-md-12">
-          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-            <input class="mdl-textfield__input" type="text" id="country">
-            <label class="mdl-textfield__label" for="country">Country</label>
+            <label class="mdl-textfield__label" for="administrative_area_level_1">State</label>
           </div>
         </div>
         <div class="col-md-12">
           <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
             <input class="mdl-textfield__input" type="text" id="postal_code">
             <label class="mdl-textfield__label" for="postal_code">Postal Code</label>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="country">
+            <label class="mdl-textfield__label" for="country">Country</label>
           </div>
         </div>
       </div>
@@ -214,6 +214,10 @@
       for(var i =0; i < document.querySelectorAll('.mdl-textfield').length; i++) {
         document.querySelectorAll('.mdl-textfield')[i].MaterialTextfield.checkDirty();
       }
+      var route_temp = $("#route").val();
+      var street_number_temp = $("#street_number").val();
+      $("#street_number").val(street_number_temp + ', '+ route_temp);
+      $("#route").val('');
     }
 
     function myMap() {
