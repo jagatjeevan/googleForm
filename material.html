@@ -9,10 +9,18 @@
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.blue_grey-deep_purple.min.css">
   <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
   <style>
+    .hide {
+      display: none;
+    }
+    .submit__error,
+    .submit__error--empty {
+      color: #e74c3c;
+    }
     label {
       margin-bottom: 0;
     }
@@ -60,6 +68,47 @@
       border-bottom: 1px solid #e0e0e0;
       padding-bottom: 5px;
     }
+    .beauty-product {
+      margin: 10px auto;
+    }
+    .submit__generated {
+      display: inline-block;
+    }
+    .submit__generated.valid:after, .submit__generated.unvalid:after {
+      font-family: FontAwesome;
+      font-size: 18px;
+      margin-left: 10px;
+    }
+    .submit__generated.valid:after {
+      content: "\f00c";
+      color: #2ecc71;
+    }
+    .submit__generated.valid .submit__input {
+      border: 1px solid #2ecc71;
+      color: #2ecc71 !important;
+    }
+    .submit__generated.unvalid:after {
+      content: "\f00d";
+      color: #e74c3c;
+    }
+    .submit__generated.unvalid .submit__input {
+      border: 1px solid #e74c3c;
+      color: #e74c3c;
+    }
+    .submit__generated .submit__input {
+      position: relative;
+      outline: 0;
+      height: 35px;
+      width: 35px;
+      border-radius: 4px;
+      border: 1px solid #42A0DD;
+      color: #42A0DD;
+      text-align: center;
+      font-weight: bold;
+      font-size: 16px;
+      top: -2px;
+    }
+
   </style>
 
 </head>
@@ -76,6 +125,8 @@
           <h2 class="title">Request a sample here - LOVE beauty AND planet</h2>
           <div class="text-muted">We have one goal - To make you more beautiful and give a little love to our planet. We want to help make a little difference with every shower towards a happier, less wasteful planet. Our approach is a holistic one, encompassing the entire product life cycle and beyond: we’ve given careful thought to our ingredients, product packaging, and social partnerships. We call it our passionate journey of #smallactsoflove, and we’re just getting started.</div>
         </div>
+
+        <img src="Unilever-Love-Beauty-and-Planet_hydration.jpg" alt="" class="beauty-product">
 
         <div class="col-md-12 section-title">
           <h4>Personal Details</h4>
@@ -170,6 +221,21 @@
         </div>
       </div>
       <div class="row">
+        <div class="col-md-12">
+          <div class="col-md-12 section-title">
+            <h4>Are you human?</h4>
+            <label class="submit__control">
+              <div>
+                <div class="submit__generated"></div>
+                <i class="fa fa-refresh"></i>
+              </div>
+              <span class="submit__error hide">Incorrect value</span>
+              <span class="submit__error--empty hide">Required field cannot be left blank</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-md-12 text-right">
           <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="submit">Submit</button>
         </div>
@@ -230,6 +296,7 @@
   <!-- DOM manipulation -->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="captcha.js"></script>
   <script>
     function addInvalidClass(id) {
       $("#"+id).parent('.mdl-textfield').addClass('is-invalid');
