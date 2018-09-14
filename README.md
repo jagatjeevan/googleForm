@@ -8,4 +8,4 @@ The form for the advertisement is [here](https://script.google.com/macros/s/AKfy
 
 and the response collected is [here](https://docs.google.com/spreadsheets/d/12Lgngx7UKPdp16t4b060xOqBqvZVJeaUuheB09obAxc/edit#gid=0)
 
-![demo](googleform.mp4)
+![demo](googleform.gif)
