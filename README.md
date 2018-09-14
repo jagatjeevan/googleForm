@@ -7,3 +7,5 @@ The purpose of this repo is to get data from users and populate it to spreadshee
 The form for the advertisement is [here](https://script.google.com/macros/s/AKfycbxOQ20NwPhDTforlDkBAZ51MsbDWIC8xiO_Er-t8dYUdKTsmH0R/exec)
 
 and the response collected is [here](https://docs.google.com/spreadsheets/d/12Lgngx7UKPdp16t4b060xOqBqvZVJeaUuheB09obAxc/edit#gid=0)
+
+![demo](googleform.mp4)
